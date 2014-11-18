@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sexo">
+        <item>Macho</item>
+        <item>Hembra</item>
+    </string-array>
+
+    <string-array name="Tipo_avisos">
+        <item>Adopcion</item>
+        <item>Perdida</item>
+        <item>Hallazgo</item>
+    </string-array>
+
+    <string-array name="Raza_perro">
+        <item>Akita Americano</item>
+        <item>Akita_Inu</item>
+        <item>Pitbull</item>
+    </string-array>
+</resources>

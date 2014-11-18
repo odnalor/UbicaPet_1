@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MyActivity" >
+
+    <item
+        android:id="@+id/action_camera"
+        android:title="@string/menu_camera"
+        android:icon="@drawable/ic_action_camera"
+        android:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_logout"
+        android:title="@string/log_out"/>
+
+
+
+</menu>

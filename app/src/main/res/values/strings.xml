@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">UbicaPet</string>
+    <string name="title_section1">Mascotas</string>
+    <string name="title_section2">Mis Avisos</string>
+    <string name="title_section3">Mapa</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_sign_up">Registro</string>
+    <string name="log_out">LogOut</string>
+    <string name="login_buton">Login</string>
+    <string name="sign_UP">Registrar</string>
+    <string name="user_name">Usuario</string>
+    <string name="pasword">Contraseña</string>
+    <string name="Email">Email</string>
+    <string name="signUpButton">Registrar</string>
+    <string name="signup_error_message">Asegurese de ingresar correctamente los datos solicitados</string>
+    <string name="signup_error_title">Oops!</string>
+    <string name="login_error_message">Por favor Ingrese un usuario y contraseña validos</string>
+    <string name="login_error_title">Oops!</string>
+    <string name="full_name">Nombre y Apellido</string>
+    <string name="telephone">Telefono celular</string>
+    <string name="direccion">Direccion</string>
+    <string name="title_activity_mascotas_fragment">MascotasFragment</string>
+    <string name="title_activity_avisos_fragment">AvisosFragment</string>
+    <string name="title_activity_map_fragment">MapFragment</string>
+    <string name="empty_pet_label">Agregue mascotas para comenzar</string>
+    <string name="avisos">No hay avisos</string>
+    <string name="maps">MAPA</string>
+    <string name="edit_pet">Agregar Mascotas</string>
+    <string name="nombre_perro">Nombre Mascota</string>
+    <string name="raza">Raza mascota</string>
+    <string name="pet_sex">Sexo de su mascota</string>
+    <string name="color">Introdusca Color principal </string>
+    <string name="Photo_button">Subir foto</string>
+    <string name="edit_size">Tamaño Mascota</string>
+    <string name="edit_characteristic">Ingrese 1 caracteristica principal</string>
+    <string name="title_activity_parse_constants">ParseConstants</string>
+    <string name="button_edit">Editar</string>
+    <string name="button_delet">Eliminar</string>
+    <string name="title_activity_pet_info">Informacion mascotas</string>
+    <string name="button_create">Crear</string>
+    <string name="title_activity_create_ads">Crear un aviso</string>
+    <string name="title_activity_RegisterPet">Registro de mascotaso</string>
+    <string name="title_activity_prueba_mapa">Map</string>
+    <string name="title_activity_search_map">Map</string>
+    <string name="search_button">Buscar</string>
+    <string name="title_activity_register_pet">RegisterPetActivity</string>
+    <string name="title_activity_pet_fragment">PetFragment</string>
+    <string name="title_activity_ads_fragment">AdsFragment</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_prueba">prueba</string>
+    <string name="title_activity_post">Avisos</string>
+    <string name="menu_camera">camera</string>
+
+    <string-array name="camera_option">
+        <item>Sacar foto</item>
+        <item>Elejir foto</item>
+    </string-array>
+
+    <string name="title_activity_posts">Posts</string>
+    <string name="button_Create">Crear</string>
+    <string name="Ads_info">Escriba el anuncio aca.</string>
+    <string name="title_activity_ads_info">AdsInfo</string>
+    <string name="Seleccion_aviso">Seleccione tipo de aviso</string>
+    <string name="error_e">Ocurrio un Error</string>
+    <string name="error_ubicacion">No es posible obtener ubicacion</string>
+    <string name="ocurrio_error">Ocurrio un error</string>
+    <string name="error_marcadores">Error al obtener los marcadores</string>
+    <string name="GPS_OFF_Messege">GPS descativado</string>
+    <string name="servicios_desabilitaos">servicios desabilitados</string>
+    <string name="titulo_aviso">Ingrese un titulo para el aviso.</string>
+
+</resources>
