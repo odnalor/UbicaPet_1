@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -22,7 +23,7 @@ import com.parse.ParseUser;
 public class AdsInfo extends ListActivity{
     protected ParseUser mCurrentUser;
     protected String mAds;
-    protected Button mDeleteButon;
+    protected Button mDeleteButton;
     protected String []AdsInfo;
 
 
@@ -37,11 +38,11 @@ public class AdsInfo extends ListActivity{
         Intent intent= getIntent();
         mAds = intent.getStringExtra("Titulo");
 
-        Toast toast = Toast.makeText(this, mAds, Toast.LENGTH_LONG);
-        toast.show();
+
         setProgressBarIndeterminateVisibility(true);
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Advertise");
         query.whereEqualTo("parent", mCurrentUser);
+        query.whereEqualTo("Titulo", mAds);
 
         query.getFirstInBackground(new GetCallback<ParseObject>() {
 
@@ -75,6 +76,34 @@ public class AdsInfo extends ListActivity{
 
             }
         });
+
+
+        // borrar mascota
+        mDeleteButton = (Button)findViewById(R.id.button_Eliminar);
+        mDeleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ParseQuery query = new ParseQuery("Advertise");
+                query.whereEqualTo("parent", mCurrentUser);
+                query.whereEqualTo("Titulo", mAds);
+                query.getFirstInBackground(new GetCallback() {
+                    @Override
+                    public void done(ParseObject Ads, ParseException e) {
+                        Ads.deleteInBackground();
+                    }
+                });
+
+                Intent intent = new Intent(AdsInfo.this, MyActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                finish();
+
+            }
+
+        });
+
 
     }
 
