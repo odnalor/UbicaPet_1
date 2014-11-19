@@ -72,5 +72,7 @@
     <string name="GPS_OFF_Messege">GPS descativado</string>
     <string name="servicios_desabilitaos">servicios desabilitados</string>
     <string name="titulo_aviso">Ingrese un titulo para el aviso.</string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="consulta_vacia">no se encontraron resultados</string>
 
 </resources>

@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.parse.GetCallback;
 import com.parse.ParseException;
@@ -34,13 +35,16 @@ public class AdsInfo extends ListActivity{
 
         mCurrentUser = ParseUser.getCurrentUser();
         Intent intent= getIntent();
-        mAds = intent.getStringExtra("Ads");
+        mAds = intent.getStringExtra("Titulo");
 
+        Toast toast = Toast.makeText(this, mAds, Toast.LENGTH_LONG);
+        toast.show();
         setProgressBarIndeterminateVisibility(true);
-        final ParseQuery<ParseObject> query = ParseQuery.getQuery("Advertise");
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Advertise");
         query.whereEqualTo("parent", mCurrentUser);
-        query.whereEqualTo("objectid", mAds);
+
         query.getFirstInBackground(new GetCallback<ParseObject>() {
+
             @Override
             public void done(ParseObject parseObject, ParseException e) {
                 setProgressBarIndeterminateVisibility(false);
@@ -62,7 +66,7 @@ public class AdsInfo extends ListActivity{
 
                 else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(AdsInfo.this);
-                    builder.setMessage(e.getMessage())
+                    builder.setMessage(getString(R.string.consulta_vacia))
                             .setTitle(R.string.login_error_title)
                             .setPositiveButton(android.R.string.ok, null);
                     AlertDialog dialog = builder.create();
