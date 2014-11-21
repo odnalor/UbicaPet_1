@@ -63,7 +63,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/edit_size"
-        android:inputType="text"
+        android:inputType="numberDecimal"
         android:layout_below="@+id/edit_color"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"

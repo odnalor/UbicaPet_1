@@ -22,6 +22,7 @@ import com.parse.ParseException;
 import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.List;
 
@@ -29,6 +30,7 @@ public class MapsActivity extends FragmentActivity implements LocationListener{
 
     public static final String TAG = RegisterPetActivity.class.getSimpleName();
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
+    protected ParseUser mCurrentUser;
     UiSettings mapSettings;
     private LatLng MUSEUM;
     private LatLng mLocation, adsLocation;
@@ -41,7 +43,7 @@ public class MapsActivity extends FragmentActivity implements LocationListener{
     protected void onCreate(Bundle savedInstanceState) {
 
 
-        MUSEUM = new LatLng(38.8874245, -77.0200729);
+        mCurrentUser = ParseUser.getCurrentUser();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         setUpMapIfNeeded();
@@ -57,7 +59,7 @@ public class MapsActivity extends FragmentActivity implements LocationListener{
                 mapSettings.setCompassEnabled(true);
                 mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
                 MyLocation();
-                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mLocation, 12));
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mLocation, 10));
 
 
 
@@ -92,8 +94,8 @@ public class MapsActivity extends FragmentActivity implements LocationListener{
 
             mLocation = new LatLng(location.getLatitude(), location.getLongitude());
             mLocat = new ParseGeoPoint(location.getLatitude(), location.getLongitude());
-            Toast toast = Toast.makeText(this, mLocation+"", Toast.LENGTH_LONG);
-            toast.show();
+            //Toast toast = Toast.makeText(this, mLocation+"", Toast.LENGTH_LONG);
+            //toast.show();
 
         }
         catch (Exception e){
@@ -153,6 +155,8 @@ public class MapsActivity extends FragmentActivity implements LocationListener{
 
             query = ParseQuery.getQuery("Advertise");
 
+
+
             query.findInBackground(new FindCallback<ParseObject>() {
                 @Override
                 public void done(List<ParseObject> avisos, ParseException e) {
@@ -161,7 +165,7 @@ public class MapsActivity extends FragmentActivity implements LocationListener{
 
 
                         for (ParseObject ads : avisos) {
-                            String titulo = ads.getString("type");
+                            String titulo = ads.getString("Titulo");
                             String aviso = ads.getString("advertice");
                             ParseGeoPoint position = ads.getParseGeoPoint("location");
                             adsLocation = new LatLng(position.getLatitude(), position.getLongitude());

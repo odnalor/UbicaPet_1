@@ -1,18 +1,15 @@
 package com.ubicapet.rolando.ubicapet_1;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.parse.GetCallback;
 import com.parse.ParseException;
