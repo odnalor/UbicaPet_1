@@ -60,14 +60,23 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.ubicapet.rolando.ubicapet_1.MyActivity"
+            android:name="com.ubicapet.rolando.ubicapet_1.SplashScreenActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ubicapet.rolando.ubicapet_1.MyActivity" />
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.ubicapet.rolando.ubicapet_1.MyActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.ubicapet.rolando.ubicapet_1.LoginActivity"
@@ -118,6 +127,15 @@
         <activity
             android:name="com.ubicapet.rolando.ubicapet_1.AdsInfo"
             android:label="@string/title_activity_ads_info"
+            android:parentActivityName="com.ubicapet.rolando.ubicapet_1.MyActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ubicapet.rolando.ubicapet_1.MyActivity" />
+        </activity>
+        <activity
+            android:name="com.ubicapet.rolando.ubicapet_1.Registro_perdida"
+            android:label="@string/title_activity_registro_perdida"
             android:parentActivityName="com.ubicapet.rolando.ubicapet_1.MyActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

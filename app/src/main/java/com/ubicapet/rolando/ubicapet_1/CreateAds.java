@@ -114,6 +114,8 @@ public class CreateAds extends Activity implements LocationListener{
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
 
+                    finish();
+
                 }
 
 
