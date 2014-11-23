@@ -54,13 +54,15 @@ public class PetFragment extends ListFragment {
         mCurrentUser = ParseUser.getCurrentUser();
 
 
-            getActivity().setProgressBarIndeterminateVisibility(true);
+        getActivity().setProgressBarIndeterminateVisibility(true);
+        try {
 
 
             //Lista de mis mascotas.
             ParseQuery<ParseObject> query = ParseQuery.getQuery("Pets");
             query.whereEqualTo("parent", mCurrentUser);
             query.findInBackground(new FindCallback<ParseObject>() {
+
 
                 @Override
                 public void done(List<ParseObject> mPet, ParseException e) {
@@ -96,6 +98,14 @@ public class PetFragment extends ListFragment {
             });
 
         }
+        catch (Exception e){
+            Toast toast = Toast.makeText(getActivity(),  getString(R.string.ocurrio_error), Toast.LENGTH_LONG);
+            toast.show();
+            Log.e(TAG, getString(R.string.ocurrio_error), e);
+        }
+
+
+    }
 
 
 

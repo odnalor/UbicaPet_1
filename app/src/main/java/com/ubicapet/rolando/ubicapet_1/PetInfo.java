@@ -22,7 +22,7 @@ public class PetInfo extends ListActivity {
     public static final String TAG = PetInfo.class.getSimpleName();
     protected ParseUser mCurrentUser;
     protected String mName;
-    protected Button mDeleteButton;
+    protected Button mDeleteButton, mRegistroPerd;
     protected String[] PetsNames;
 
     @Override
@@ -47,11 +47,12 @@ public class PetInfo extends ListActivity {
                 setProgressBarIndeterminateVisibility(false);
                 if (e == null ){
 
-                    PetsNames = new String[3];
+                    PetsNames = new String[4];
 
                     PetsNames[0] = parseObject.getString("name");
                     PetsNames[1] = parseObject.getString("Race");
                     PetsNames[2] = parseObject.getString("Char");
+                    PetsNames[3] = parseObject.getString("Estado");
 
                     ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                             getListView().getContext(),
@@ -93,9 +94,25 @@ public class PetInfo extends ListActivity {
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
+                finish();
 
             }
 
+        });
+
+        mRegistroPerd = (Button) findViewById(R.id.button_perdida);
+        mRegistroPerd.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+
+                Intent intent1= new Intent(PetInfo.this, Registro_perdida.class);
+                intent1.putExtra("Pet", mName);
+                intent1.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent1);
+                finish();
+            }
         });
 
 

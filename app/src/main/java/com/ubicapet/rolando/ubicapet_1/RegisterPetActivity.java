@@ -102,9 +102,8 @@ public class RegisterPetActivity extends Activity {
                     newPet.put("Sex", sex);
                     newPet.put("Color", color);
                     newPet.put("Size", size);
-                    newPet.put("Lost", false);
-
                     newPet.put("parent", mCurrentUser);
+                    newPet.put("Estado","En casa" );
 
                     newPet.saveInBackground();
 
@@ -117,6 +116,7 @@ public class RegisterPetActivity extends Activity {
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
+                    finish();
 
                 }
 
