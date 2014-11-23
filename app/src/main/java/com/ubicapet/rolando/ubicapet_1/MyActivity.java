@@ -57,11 +57,15 @@ public class MyActivity extends FragmentActivity implements ActionBar.TabListene
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        Parse.initialize(this, "juPQxKUpvnsO2XpEnl2iNJ3IkFUvkzUA72g9054y", "JR1KMJZzc5Nx5gBggDkXxwR0cvhNO3eb5elYzFmb");
+        ParseAnalytics.trackAppOpenedInBackground(getIntent());
+
+
+
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         setContentView(R.layout.activity_my);
-
-        Parse.initialize(this, "juPQxKUpvnsO2XpEnl2iNJ3IkFUvkzUA72g9054y", "JR1KMJZzc5Nx5gBggDkXxwR0cvhNO3eb5elYzFmb");
 
 
         ParseUser currentUser = ParseUser.getCurrentUser();

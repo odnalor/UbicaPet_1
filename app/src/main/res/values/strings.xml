@@ -35,7 +35,7 @@
     <string name="pet_sex">Sexo de su mascota</string>
     <string name="color">Introdusca Color principal </string>
     <string name="Photo_button">Subir foto</string>
-    <string name="edit_size">Tamaño Mascota</string>
+    <string name="edit_size">Ingrese peso aproximado de mascota en Kg</string>
     <string name="edit_characteristic">Ingrese 1 caracteristica principal</string>
     <string name="title_activity_parse_constants">ParseConstants</string>
     <string name="button_edit">Editar</string>
@@ -57,7 +57,7 @@
 
     <string-array name="camera_option">
         <item>Sacar foto</item>
-        <item>Elejir foto</item>
+        <item>Elegir foto</item>
     </string-array>
 
     <string name="title_activity_posts">Posts</string>
@@ -74,5 +74,9 @@
     <string name="titulo_aviso">Ingrese un titulo para el aviso.</string>
     <string name="title_activity_splash_screen">SplashScreen</string>
     <string name="consulta_vacia">no se encontraron resultados</string>
+    <string name="title_activity_registro_perdida">Registro perdida</string>
+    <string name="Titulo_perdida">Registro de perdida</string>
+
+
 
 </resources>
